@@ -8,6 +8,11 @@ import Header from './components/header/Header';
 import PageNotFound from './pages/pageNotFound/PageNotFound';
 import Login from './pages/login/Login';
 import Registration from './pages/registration/Registration';
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+// import dotenv from "dotenv";
+// dotenv.config({
+//   path: './.env',
+// });
 
 function App() {
   return (
