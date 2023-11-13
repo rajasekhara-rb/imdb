@@ -9,8 +9,7 @@ import MovieList from "../../components/movieList/MovieList";
 
 const Home = () => {
     const [popularMovies, setPopularMovies] = useState([]);
-    const apiKey = "0ed74cf52b52aba51d2d91a5e83f87bc";
-    // console.log(apiKey);
+    const apiKey = process.env.REACT_APP_API_KEY;
     const apiUrl = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US`;
 
     useEffect(() => {
