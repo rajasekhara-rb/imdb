@@ -1,6 +1,8 @@
 import React from "react";
 
 const Login = () => {
+
+    localStorage.setItem("email", "sss")
     return (
         <>
             <h1>
