@@ -13,7 +13,11 @@
     width: 100%;
 }
 
+.posterImage_title{
+    color: black;
+}
  .posterImage_overlay{
+    width: 100%;
     position: absolute;
     padding: 10px;
     display: flex;
@@ -21,7 +25,7 @@
     justify-content: flex-end;
     align-items: flex-start;
     bottom:8px;
-    /* background-image: linear-gradient(rgb(248, 231, 231),rgb(240, 242, 239)); */
+    background-image: linear-gradient(rgb(248, 231, 231),rgb(240, 242, 239));
     opacity: 0.5;
     font-size: 13px;
     transition: opacity 0.3s;
@@ -33,17 +37,26 @@
 }
 
 .posterImage_releasedate{
+    color: black;
     font-size: 1.5em;
     font-weight: bold;
     margin-bottom: 20px;
 }
 
 .posterImage_rating{
+    color: black;
     margin-left: 20;
 }
 
 .posterImage_description{
+    color: black;
     font-style: italic;
     font-size: 1.4rem;
     margin-bottom: 5px;
+    /* text-overflow:ellipsis; */
 }
+
+/* a{
+    text-decoration: none;
+    color: lightcoral;
+} */

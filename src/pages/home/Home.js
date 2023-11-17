@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { Rating } from "@mui/material";
 import "./Home.css";
 import MovieList from "../../components/movieList/MovieList";
+import { clipText } from "../../components/ClipText";
 
 const Home = () => {
     const [popularMovies, setPopularMovies] = useState([]);
@@ -13,16 +14,30 @@ const Home = () => {
     const apiUrl = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US`;
 
     useEffect(() => {
-        axios.get(apiUrl).then((res) => {
-            // console.log(res.data.results);
-            setPopularMovies(res.data.results);
-        }).catch((error) => {
-            console.log(error);
-        })
-    }, [apiUrl])
+        axios.get(apiUrl)
+            .then((res) => {
+                // console.log(res.data.results);
+                setPopularMovies(res.data.results);
+            }).catch((error) => {
+                console.log(error);
+            })
+
+        }, [apiUrl])
+
+    // var i;
+    // var divs = document.querySelectorAll('.posterImage_description');
+    // for (i = 0; i < divs.length; i++) {
+    //     if (divs[i].className === 'posterImage_description') {
+    //         divs[i].innerHTML = divs[i].innerHTML.substring(0, 120) + ' <a href="/">Read more</a>';
+    //     }
+    // }
+
+    clipText("posterImage_description");
+
 
     return (
         <>
+
             <div className="poster">
                 <Carousel
                     autoPlay={true}
@@ -100,16 +115,15 @@ const Home = () => {
                                     </span>
                                 </div>
 
-                                <div className="posterImage_description">
+                                <div id="clip" className="posterImage_description">
                                     {movie ? movie.overview : ""}
                                 </div>
 
                             </div>
                         </Link>
                     ))}
-
                 </Carousel>
-                <MovieList/>
+                <MovieList />
             </div>
         </>
     )
